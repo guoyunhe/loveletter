@@ -1,5 +1,6 @@
-import QtQuick 2.9
+import QtQuick 2.10
 import QtQuick.Controls 2.3
+import QtQuick.Layouts 1.3
 
 ApplicationWindow {
     id: window
@@ -9,25 +10,32 @@ ApplicationWindow {
     title: qsTr("LoveLetter")
 
     header: ToolBar {
-        contentHeight: toolButton.implicitHeight
+        contentHeight: childrenRect.implicitHeight
 
-        ToolButton {
-            id: toolButton
-            icon.name: stackView.depth > 1 ? 'go-previous' : 'application-menu'
-            icon.source: stackView.depth > 1 ? "icons/go-previous.svg" : "icons/menu.svg"
-            text: stackView.depth > 1 ? qsTr("Back") : qsTr("Menu")
-            onClicked: {
-                if (stackView.depth > 1) {
-                    stackView.pop()
-                } else {
-                    drawer.open()
+        RowLayout {
+            anchors.fill: parent
+
+            ToolButton {
+                icon.source: stackView.depth > 1 ? "icons/ic_arrow_back_black_24px.svg" : "icons/ic_menu_black_24px.svg"
+                onClicked: {
+                    if (stackView.depth > 1) {
+                        stackView.pop()
+                    } else {
+                        drawer.open()
+                    }
                 }
             }
-        }
 
-        Label {
-            text: stackView.currentItem.title
-            anchors.centerIn: parent
+            Label {
+                text: stackView.currentItem.title
+                horizontalAlignment: Qt.AlignHCenter
+                verticalAlignment: Qt.AlignVCenter
+                Layout.fillWidth: true
+            }
+
+            ToolButton {
+                icon.source: "icons/ic_create_black_24px.svg"
+            }
         }
     }
 
