@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/menu.svg</file>
+        <file>icons/go-previous.svg</file>
+        <file>icons/go-next.svg</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MailBoxPage.qml</file>
+        <file>SettingsPage.qml</file>
+        <file>MailPage.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>MailItem.qml</file>
+        <file>GeneralSettingsPage.qml</file>
+        <file>AccountSettingsPage.qml</file>
+        <file>MailListModel.qml</file>
+    </qresource>
+</RCC>
